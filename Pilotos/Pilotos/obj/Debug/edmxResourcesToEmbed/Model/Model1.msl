@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Ubr_201212487ModelStoreContainer" CdmEntityContainer="Ubr_201212487Entities">
+    <EntitySetMapping Name="Piloto">
+      <EntityTypeMapping TypeName="Ubr_201212487Model.Piloto">
+        <MappingFragment StoreEntitySet="Piloto">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Automovil" ColumnName="Automovil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
