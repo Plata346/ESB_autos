@@ -12,7 +12,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pilotos", "..\Pilotos\Pilot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RastreoCarro", "..\RastreoCarro\RastreoCarro\RastreoCarro.csproj", "{B61642D1-FBAF-4B2D-A648-AB4C9D57A981}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usuarios", "Usuarios\Usuarios.csproj", "{E6EBDBE5-66BD-4D23-81CF-EC79ED38DE6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usuarios", "..\Usuarios\Usuarios\Usuarios.csproj", "{1FF760AB-6591-4009-A189-8491F30A858E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,15 +32,15 @@ Global
 		{B61642D1-FBAF-4B2D-A648-AB4C9D57A981}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B61642D1-FBAF-4B2D-A648-AB4C9D57A981}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B61642D1-FBAF-4B2D-A648-AB4C9D57A981}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E6EBDBE5-66BD-4D23-81CF-EC79ED38DE6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E6EBDBE5-66BD-4D23-81CF-EC79ED38DE6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E6EBDBE5-66BD-4D23-81CF-EC79ED38DE6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E6EBDBE5-66BD-4D23-81CF-EC79ED38DE6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FF760AB-6591-4009-A189-8491F30A858E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FF760AB-6591-4009-A189-8491F30A858E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FF760AB-6591-4009-A189-8491F30A858E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FF760AB-6591-4009-A189-8491F30A858E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {59F7B7ED-B0CA-412A-803C-677E65DE06AB}
+		SolutionGuid = {28FD4EF2-7868-4FB6-A174-DE948933F429}
 	EndGlobalSection
 EndGlobal

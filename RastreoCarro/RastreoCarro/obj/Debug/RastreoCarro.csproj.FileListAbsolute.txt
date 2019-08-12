@@ -55,3 +55,4 @@ C:\Users\usuario\source\repos\ESB_autos\RastreoCarro\RastreoCarro\bin\Microsoft.
 C:\Users\usuario\source\repos\ESB_autos\RastreoCarro\RastreoCarro\obj\Debug\RastreoCarro.csproj.CopyComplete
 C:\Users\usuario\source\repos\ESB_autos\RastreoCarro\RastreoCarro\obj\Debug\RastreoCarro.dll
 C:\Users\usuario\source\repos\ESB_autos\RastreoCarro\RastreoCarro\obj\Debug\RastreoCarro.pdb
+C:\Users\usuario\Source\Repos\ESB_autos\RastreoCarro\RastreoCarro\obj\Debug\RastreoCarro.csprojAssemblyReference.cache
