@@ -34,12 +34,15 @@ namespace Pilotos
             {
                 using (Ubr_201212487Entities db = new Ubr_201212487Entities())
                 {
-                    Piloto pl = new Piloto();
+                    piloto pl = new piloto();
                     pl.id = Convert.ToInt32(getUtimoPiloto());
-                    pl.Nombre = "Piloto " + pl.id;
-                    pl.Automovil = "Automovil " + pl.id;
+                    pl.nombre = "Piloto " + pl.id;
+                    pl.telefono = "Automovil " + pl.id;
+                    pl.marca_carro = "Automovil " + pl.id;
+                    pl.linea_carro = "Automovil " + pl.id;
+                    pl.placa_carro = "Automovil " + pl.id;
 
-                    db.Piloto.Add(pl);
+                    db.piloto.Add(pl);
                     db.SaveChanges();
                 }
 
@@ -61,9 +64,9 @@ namespace Pilotos
                 {
                     using (Ubr_201212487Entities db = new Ubr_201212487Entities())
                     {
-                        db.Piloto.Add(new Piloto());
+                        db.piloto.Add(new piloto());
 
-                        Piloto pl = db.Piloto.ToList().Last();
+                        piloto pl = db.piloto.ToList().Last();
 
                         if (pl.Equals(null))
                         {

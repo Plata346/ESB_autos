@@ -12,10 +12,20 @@ namespace Pilotos.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Piloto
+    public partial class piloto
     {
+        public piloto()
+        {
+            this.viaje = new HashSet<viaje>();
+        }
+    
         public int id { get; set; }
-        public string Nombre { get; set; }
-        public string Automovil { get; set; }
+        public string nombre { get; set; }
+        public string telefono { get; set; }
+        public string marca_carro { get; set; }
+        public string linea_carro { get; set; }
+        public string placa_carro { get; set; }
+    
+        public virtual ICollection<viaje> viaje { get; set; }
     }
 }

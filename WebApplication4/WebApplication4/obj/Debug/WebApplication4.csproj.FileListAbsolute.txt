@@ -54,6 +54,7 @@ C:\Users\usuario\source\repos\WebApplication4\WebApplication4\obj\Debug\WebAppli
 C:\Users\usuario\source\repos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.csproj.CopyComplete
 C:\Users\usuario\source\repos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.dll
 C:\Users\usuario\source\repos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.pdb
+C:\Users\usuario\Source\Repos\ESB_autos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.csproj.CoreCompileInputs.cache
 C:\Users\usuario\Source\Repos\ESB_autos\WebApplication4\WebApplication4\bin\WebApplication4.dll.config
 C:\Users\usuario\Source\Repos\ESB_autos\WebApplication4\WebApplication4\bin\WebApplication4.dll
 C:\Users\usuario\Source\Repos\ESB_autos\WebApplication4\WebApplication4\bin\WebApplication4.pdb
@@ -107,8 +108,6 @@ C:\Users\usuario\Source\Repos\ESB_autos\WebApplication4\WebApplication4\bin\Enti
 C:\Users\usuario\Source\Repos\ESB_autos\WebApplication4\WebApplication4\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\usuario\Source\Repos\ESB_autos\WebApplication4\WebApplication4\bin\EntityFramework.xml
 C:\Users\usuario\Source\Repos\ESB_autos\WebApplication4\WebApplication4\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\usuario\Source\Repos\ESB_autos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.csprojAssemblyReference.cache
-C:\Users\usuario\Source\Repos\ESB_autos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.csproj.CoreCompileInputs.cache
 C:\Users\usuario\Source\Repos\ESB_autos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.csproj.CopyComplete
 C:\Users\usuario\Source\Repos\ESB_autos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.dll
 C:\Users\usuario\Source\Repos\ESB_autos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.pdb

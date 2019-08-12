@@ -51,7 +51,6 @@ C:\Users\usuario\source\repos\ESB_autos\Pilotos\Pilotos\bin\EntityFramework.dll
 C:\Users\usuario\source\repos\ESB_autos\Pilotos\Pilotos\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\usuario\source\repos\ESB_autos\Pilotos\Pilotos\bin\EntityFramework.xml
 C:\Users\usuario\source\repos\ESB_autos\Pilotos\Pilotos\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\usuario\source\repos\ESB_autos\Pilotos\Pilotos\obj\Debug\Pilotos.csprojAssemblyReference.cache
 C:\Users\usuario\source\repos\ESB_autos\Pilotos\Pilotos\obj\Debug\Pilotos.csproj.CoreCompileInputs.cache
 C:\Users\usuario\source\repos\ESB_autos\Pilotos\Pilotos\obj\Debug\Pilotos.csproj.CopyComplete
 C:\Users\usuario\source\repos\ESB_autos\Pilotos\Pilotos\obj\Debug\Pilotos.dll

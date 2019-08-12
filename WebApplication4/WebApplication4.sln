@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29201.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication4", "WebApplication4\WebApplication4.csproj", "{E788A9B5-78D2-4CE4-9776-44A85495E4FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pilotos", "..\Pilotos\Pilotos\Pilotos.csproj", "{52065B67-8337-469F-9AA8-EF96FCBB980F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RastreoCarro", "..\RastreoCarro\RastreoCarro\RastreoCarro.csproj", "{B61642D1-FBAF-4B2D-A648-AB4C9D57A981}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,11 +19,19 @@ Global
 		{E788A9B5-78D2-4CE4-9776-44A85495E4FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E788A9B5-78D2-4CE4-9776-44A85495E4FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E788A9B5-78D2-4CE4-9776-44A85495E4FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52065B67-8337-469F-9AA8-EF96FCBB980F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52065B67-8337-469F-9AA8-EF96FCBB980F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52065B67-8337-469F-9AA8-EF96FCBB980F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52065B67-8337-469F-9AA8-EF96FCBB980F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B61642D1-FBAF-4B2D-A648-AB4C9D57A981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B61642D1-FBAF-4B2D-A648-AB4C9D57A981}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B61642D1-FBAF-4B2D-A648-AB4C9D57A981}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B61642D1-FBAF-4B2D-A648-AB4C9D57A981}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B8F5B6DB-C58E-4209-91C3-8704BC68D570}
+		SolutionGuid = {59F7B7ED-B0CA-412A-803C-677E65DE06AB}
 	EndGlobalSection
 EndGlobal

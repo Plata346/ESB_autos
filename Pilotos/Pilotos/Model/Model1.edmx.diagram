@@ -4,8 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="79ddb0a4399e4d0091c0e9b4f6cacde1" Name="Diagram1">
-        <EntityTypeShape EntityType="Ubr_201212487Model.Piloto" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="b2ba80dbee0c46939b1505bdf2e97dcc" Name="Diagram1">
+        <EntityTypeShape EntityType="Ubr_201212487Model.piloto" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ubr_201212487Model.sysdiagrams" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ubr_201212487Model.usuario" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Ubr_201212487Model.viaje" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="Ubr_201212487Model.viaje_piloto_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Ubr_201212487Model.viaje_usuario_fk" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
