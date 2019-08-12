@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Ubr_201212487Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="piloto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="marca_carro" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="linea_carro" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="placa_carro" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="viaje" Relationship="Self.viaje_piloto_fk" FromRole="piloto" ToRole="viaje" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="usr" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pasword" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="viaje" Relationship="Self.viaje_usuario_fk" FromRole="usuario" ToRole="viaje" />
+  </EntityType>
+  <EntityType Name="viaje">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="fecha" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="origen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="destino" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="activo" Type="Boolean" />
+    <Property Name="usuario_id" Type="Int32" Nullable="false" />
+    <Property Name="piloto_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="piloto" Relationship="Self.viaje_piloto_fk" FromRole="viaje" ToRole="piloto" />
+    <NavigationProperty Name="usuario" Relationship="Self.viaje_usuario_fk" FromRole="viaje" ToRole="usuario" />
+  </EntityType>
+  <Association Name="viaje_piloto_fk">
+    <End Role="piloto" Type="Self.piloto" Multiplicity="1" />
+    <End Role="viaje" Type="Self.viaje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="piloto">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="viaje">
+        <PropertyRef Name="piloto_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="viaje_usuario_fk">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="viaje" Type="Self.viaje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="viaje">
+        <PropertyRef Name="usuario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Ubr_201212487Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="piloto" EntityType="Self.piloto" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" />
+    <EntitySet Name="viaje" EntityType="Self.viaje" />
+    <AssociationSet Name="viaje_piloto_fk" Association="Self.viaje_piloto_fk">
+      <End Role="piloto" EntitySet="piloto" />
+      <End Role="viaje" EntitySet="viaje" />
+    </AssociationSet>
+    <AssociationSet Name="viaje_usuario_fk" Association="Self.viaje_usuario_fk">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="viaje" EntitySet="viaje" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(Ubr_201212487Model.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(Ubr_201212487Model.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

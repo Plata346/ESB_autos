@@ -25,15 +25,23 @@ namespace WebApplication4
         }
 
         [WebMethod]
-        public bool PedirViaje()
+        public String PedirViaje()
         {
             try
             {
-                return true;
+                WS_Pilotos.WebService1Soap ServicoPilotos = new WS_Pilotos.WebService1SoapClient();
+                if(ServicoPilotos.AgregarPiloto())
+                {
+                    return "Piloto agregado de forma exitosa";
+                }else
+                {
+                    return "Son cosas que pasan :(";
+                }
+
             }
             catch (Exception)
             {
-                return false;
+                return "Fracaso total";
             }
         }
     }
