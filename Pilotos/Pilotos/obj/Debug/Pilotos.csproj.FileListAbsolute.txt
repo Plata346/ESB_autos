@@ -55,3 +55,4 @@ C:\Users\usuario\source\repos\ESB_autos\Pilotos\Pilotos\obj\Debug\Pilotos.csproj
 C:\Users\usuario\source\repos\ESB_autos\Pilotos\Pilotos\obj\Debug\Pilotos.csproj.CopyComplete
 C:\Users\usuario\source\repos\ESB_autos\Pilotos\Pilotos\obj\Debug\Pilotos.dll
 C:\Users\usuario\source\repos\ESB_autos\Pilotos\Pilotos\obj\Debug\Pilotos.pdb
+C:\Users\usuario\Source\Repos\ESB_autos\Pilotos\Pilotos\obj\Debug\Pilotos.csprojAssemblyReference.cache

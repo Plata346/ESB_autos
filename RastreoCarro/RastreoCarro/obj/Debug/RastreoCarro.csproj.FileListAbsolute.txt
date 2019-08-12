@@ -52,7 +52,6 @@ C:\Users\usuario\source\repos\ESB_autos\RastreoCarro\RastreoCarro\bin\EntityFram
 C:\Users\usuario\source\repos\ESB_autos\RastreoCarro\RastreoCarro\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\usuario\source\repos\ESB_autos\RastreoCarro\RastreoCarro\bin\EntityFramework.xml
 C:\Users\usuario\source\repos\ESB_autos\RastreoCarro\RastreoCarro\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\usuario\source\repos\ESB_autos\RastreoCarro\RastreoCarro\obj\Debug\RastreoCarro.csprojAssemblyReference.cache
 C:\Users\usuario\source\repos\ESB_autos\RastreoCarro\RastreoCarro\obj\Debug\RastreoCarro.csproj.CopyComplete
 C:\Users\usuario\source\repos\ESB_autos\RastreoCarro\RastreoCarro\obj\Debug\RastreoCarro.dll
 C:\Users\usuario\source\repos\ESB_autos\RastreoCarro\RastreoCarro\obj\Debug\RastreoCarro.pdb

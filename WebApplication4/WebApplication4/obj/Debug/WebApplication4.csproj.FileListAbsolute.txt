@@ -111,3 +111,4 @@ C:\Users\usuario\Source\Repos\ESB_autos\WebApplication4\WebApplication4\bin\Micr
 C:\Users\usuario\Source\Repos\ESB_autos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.csproj.CopyComplete
 C:\Users\usuario\Source\Repos\ESB_autos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.dll
 C:\Users\usuario\Source\Repos\ESB_autos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.pdb
+C:\Users\usuario\Source\Repos\ESB_autos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.csprojAssemblyReference.cache
