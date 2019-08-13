@@ -33,6 +33,9 @@ namespace Usuarios
         /// Registrar nuevos usuarios.
         /// SOlicita parametros como Nombre, telefono, usuario, contraseña.
         /// </summary>
+        /// <returns>
+        /// Bool
+        /// </returns>
         [WebMethod]
         public bool RegistrarUsuario(String user, String tel, String unique, String clave)
         {

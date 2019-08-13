@@ -11,7 +11,8 @@ using TransactionScope = System.Transactions.TransactionScope;
 namespace Pilotos
 {
     /// <summary>
-    /// Descripción breve de WebService1
+    /// WebService encargado de gestionar tareas unicamente de piltoos.
+    /// Registro de nuevos pilotos y finalizacion de viajes.
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
