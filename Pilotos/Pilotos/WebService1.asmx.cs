@@ -28,7 +28,7 @@ namespace Pilotos
         }
 
         [WebMethod]
-        public bool AgregarPiloto()
+        public String AgregarPiloto(String name, String tel, String marca, String linea, String placa)
         {
             try
             {
@@ -36,21 +36,21 @@ namespace Pilotos
                 {
                     piloto pl = new piloto();
                     pl.id = Convert.ToInt32(getUtimoPiloto());
-                    pl.nombre = "Piloto " + pl.id;
-                    pl.telefono = "Automovil " + pl.id;
-                    pl.marca_carro = "Automovil " + pl.id;
-                    pl.linea_carro = "Automovil " + pl.id;
-                    pl.placa_carro = "Automovil " + pl.id;
+                    pl.nombre = name;
+                    pl.telefono =tel;
+                    pl.marca_carro = marca;
+                    pl.linea_carro = linea;
+                    pl.placa_carro = placa;
 
                     db.piloto.Add(pl);
                     db.SaveChanges();
-                }
 
-                return true;
+                    return "0-Piloto agregado con Exito.-" + pl.id;
+                }                
             }
             catch (Exception ex)
             {
-                return false;
+                return "1-Error al agregar nuevo piloto.-ERROR DE LA VIDA!";
             }
         }
 
@@ -89,5 +89,64 @@ namespace Pilotos
             }
             return ultimoCOdigo;
         }
+
+        [WebMethod]
+        public String FinalizarViaje(int idPiloto)
+        {
+            try
+            {
+                using (Ubr_201212487Entities db = new Ubr_201212487Entities())
+                {
+                    List<viaje> selec = null;
+                    bool flag = true;
+
+                    //consulta que obtiene el usuario y sus propiedades
+                    try
+                    {
+                        selec = (from tabla_viaje in db.viaje
+                                 where tabla_viaje.piloto_id.Equals(idPiloto)
+                                 select tabla_viaje).ToList();
+
+                    }
+                    catch
+                    {
+                        flag = false;
+                    }
+
+                    usuario uu = null;
+                    foreach (viaje v in selec)
+                    {
+                        if (v.activo.Equals(true))
+                        {
+                            flag = false;
+                            uu = v.usuario;
+                            v.activo = false;
+
+                            //db.Entry(viaje).State = System.Data.EntityState.Modified;                            
+                            db.SaveChanges();
+                            break;
+                        }
+                    }
+
+
+                    if (!flag)
+                    {
+                        //existe un viaje activo
+                        return "0-Usted finalizo el viaje con " + uu.nombre;
+
+                    }
+                    else
+                    {
+                        return "1-No hay vijes apra finalizar-Sad But True!";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return "1-El viaje no se pudo finalizar-0";
+            }
+        }
+
+
     }
 }

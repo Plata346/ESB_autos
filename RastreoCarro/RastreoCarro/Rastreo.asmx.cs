@@ -27,67 +27,127 @@ namespace RastreoCarro
         }
 
         [WebMethod]
-        public bool AgregarPiloto()
+        public String RastrearViajeUsuario(int idUsuario)
         {
             try
             {
                 using (Ubr_201212487Entities db = new Ubr_201212487Entities())
                 {
-                    piloto pl = new piloto();
-                    pl.id = Convert.ToInt32(getUtimoPiloto());
-                    pl.nombre = "Piloto " + pl.id;
-                    pl.telefono = "Automovil " + pl.id;
-                    pl.marca_carro = "Automovil " + pl.id;
-                    pl.linea_carro = "Automovil " + pl.id;
-                    pl.placa_carro = "Automovil " + pl.id;
+                    List<viaje> selec = null;
+                    bool flag = true;
 
-                    db.piloto.Add(pl);
-                    db.SaveChanges();
-                }
+                    //consulta que obtiene el usuario y sus propiedades
+                    try
+                    {
+                        selec = (from tabla_viaje in db.viaje
+                                 where tabla_viaje.usuario_id.Equals(idUsuario)
+                                 select tabla_viaje).ToList();
 
-                return true;
+                    }
+                    catch
+                    {
+                        flag = false;
+                    }
+                    
+                    viaje vv = null;
+                    foreach (viaje v in selec)
+                    {
+                        if (v.activo.Equals(true))
+                        {
+                            flag = false;
+                            vv = v;
+                            break;
+                        }
+                    }
+
+                    if (!flag)
+                    {
+                        //existe un viaje activo
+                        return "0"+
+                            "-"+vv.usuario.nombre+
+                            "-" + vv.piloto.nombre +
+                            "-" + vv.piloto.marca_carro +
+                            "-" + vv.piloto.linea_carro +
+                            "-" + vv.piloto.placa_carro+
+                            "-" + vv.origen +
+                            "-" + vv.destino +
+                            "-" + vv.fecha 
+                            ;
+
+                    }
+                    else
+                    {
+                        return "1-No hay vijes pendientes-Sad But True!";
+                    }
+                }                
             }
             catch (Exception ex)
             {
-                return false;
+                return "1-Que esta pasandaaaaaaa-ya no valide esto!";
             }
         }
 
-        private string getUtimoPiloto()
+        [WebMethod]
+        public String RastrearViajePiloto(int idPiloto)
         {
-            string ultimoCOdigo = "";
-
             try
             {
-                using (TransactionScope trn = new TransactionScope(TransactionScopeOption.Suppress))
+                using (Ubr_201212487Entities db = new Ubr_201212487Entities())
                 {
-                    using (Ubr_201212487Entities db = new Ubr_201212487Entities())
+                    List<viaje> selec = null;
+                    bool flag = true;
+
+                    //consulta que obtiene el usuario y sus propiedades
+                    try
                     {
-                        db.piloto.Add(new piloto());
+                        selec = (from tabla_viaje in db.viaje
+                                 where tabla_viaje.piloto_id.Equals(idPiloto)
+                                 select tabla_viaje).ToList();
 
-                        piloto pl = db.piloto.ToList().Last();
+                    }
+                    catch
+                    {
+                        flag = false;
+                    }
 
-                        if (pl.Equals(null))
+                    viaje vv = null;
+                    foreach (viaje v in selec)
+                    {
+                        if (v.activo.Equals(true))
                         {
-                            ultimoCOdigo = "1";
+                            flag = false;
+                            vv = v;
+                            break;
                         }
-                        else
-                        {
-                            ultimoCOdigo = (pl.id + 1).ToString();
-                        }
+                    }
 
-                        //int intCurrentId = Convert.ToInt32(db.Database.SqlQuery<decimal>("SELECT IDENT_CURRENT ('Col_ATM')", new object[0]).FirstOrDefault());
+                    if (!flag)
+                    {
+                        //existe un viaje activo
+                        return "0" +
+                            "-" + vv.usuario.nombre +
+                            "-" + vv.piloto.nombre +
+                            "-" + vv.piloto.marca_carro +
+                            "-" + vv.piloto.linea_carro +
+                            "-" + vv.piloto.placa_carro +
+                            "-" + vv.origen +
+                            "-" + vv.destino +
+                            "-" + vv.fecha
+                            ;
 
-                        //ultimoCOdigo = (intCurrentId + 1).ToString();
+                    }
+                    else
+                    {
+                        return "1-No hay vijes pendientes-Sad But True!";
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                ultimoCOdigo = "1";
+                return "1-Que esta pasandaaaaaaa-ya no valide esto!";
             }
-            return ultimoCOdigo;
         }
+
 
     }
 }

@@ -297,7 +297,7 @@ namespace Usuarios
             }
             catch (Exception ex)
             {
-                return "1-El viaje no se pudo registrar-0";
+                return "1-El viaje no se pudo finalizar-0";
             }
         }
 
