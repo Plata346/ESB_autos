@@ -35,6 +35,9 @@ WSUPilotos->>ESB: Respuesta
 
 ```
 
+! [Logo de GitHub] (/ UML.jpg)
+Formato:! [Alt Texto] (url)
+
 ## Formato Respuesta
 
 El formato de respuesta para cada uno de los **WebMethod** esta definido como una cadena de caracteres _string_, sin embargo el formato de esta cadena es ta formada por una cadena separada por el simbolo `-` de la siguiente manera:
