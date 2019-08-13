@@ -25,6 +25,14 @@ namespace Usuarios
             return "Hola a todos";
         }
 
+        /*
+            Metodo de registro de usuarios
+            Permite agregar nuevos usuarios al sistema
+        */
+        /// <summary>
+        /// Registrar nuevos usuarios.
+        /// SOlicita parametros como Nombre, telefono, usuario, contraseña.
+        /// </summary>
         [WebMethod]
         public bool RegistrarUsuario(String user, String tel, String unique, String clave)
         {

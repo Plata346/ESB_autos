@@ -25,18 +25,27 @@ namespace WebApplication4
         }
 
         [WebMethod]
-        public String PedirViaje()
+        public String NuevoPiloto(String name, String tel, String marca, String linea, String placa)
         {
             try
             {
-                WS_Pilotos.WebService1Soap ServicoPilotos = new WS_Pilotos.WebService1SoapClient();
-                if(ServicoPilotos.AgregarPiloto())
+                WS_Piloto.WebService1SoapClient ServicoPilotos = new WS_Piloto.WebService1SoapClient();
+                
+                string phrase = ServicoPilotos.AgregarPiloto(name, tel, marca, linea, placa);
+                string[] result = phrase.Split('-');
+
+                //foreach (var word in result)
+                //{
+                //    System.Console.WriteLine($"<{word}>");
+                //}
+                if(result[0].Equals("0"))
                 {
-                    return "Piloto agregado de forma exitosa";
-                }else
-                {
-                    return "Son cosas que pasan :(";
+                    return result[1];
                 }
+                else
+                {
+                    return result[1];
+                }                
 
             }
             catch (Exception)
@@ -44,5 +53,6 @@ namespace WebApplication4
                 return "Fracaso total";
             }
         }
+
     }
 }

@@ -75,13 +75,44 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Connected Services\WS_Pilotos\WebApplication4.WS_Pilotos.HelloWorldResponse.datasource">
+    <Content Include="Connected Services\WS_Piloto\WebApplication4.WS_Piloto.AgregarPilotoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\WS_Pilotos\WebService1.disco" />
-    <None Include="Connected Services\WS_Pilotos\configuration91.svcinfo" />
-    <None Include="Connected Services\WS_Pilotos\configuration.svcinfo" />
-    <None Include="Connected Services\WS_Pilotos\Reference.svcmap">
+    <Content Include="Connected Services\WS_Piloto\WebApplication4.WS_Piloto.FinalizarViajeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WS_Piloto\WebApplication4.WS_Piloto.HelloWorldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\WS_Piloto\WebService1.wsdl" />
+    <None Include="Connected Services\WS_Rastreo\Rastreo.wsdl" />
+    <None Include="Connected Services\WS_Piloto\WebService1.disco" />
+    <None Include="Connected Services\WS_Piloto\configuration91.svcinfo" />
+    <None Include="Connected Services\WS_Piloto\configuration.svcinfo" />
+    <None Include="Connected Services\WS_Piloto\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\WS_Rastreo\WebApplication4.WS_Rastreo.HelloWorldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WS_Rastreo\WebApplication4.WS_Rastreo.RastrearViajePilotoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WS_Rastreo\WebApplication4.WS_Rastreo.RastrearViajeUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\WS_Usuario\Actividades_Usuario.disco" />
+    <None Include="Connected Services\WS_Usuario\configuration91.svcinfo" />
+    <None Include="Connected Services\WS_Usuario\configuration.svcinfo" />
+    <None Include="Connected Services\WS_Usuario\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\WS_Rastreo\Rastreo.disco" />
+    <None Include="Connected Services\WS_Rastreo\configuration91.svcinfo" />
+    <None Include="Connected Services\WS_Rastreo\configuration.svcinfo" />
+    <None Include="Connected Services\WS_Rastreo\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -89,7 +120,17 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\WS_Pilotos\Reference.cs">
+    <Compile Include="Connected Services\WS_Piloto\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WS_Rastreo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WS_Usuario\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -101,7 +142,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\WS_Pilotos\WebService1.wsdl" />
+    <None Include="Connected Services\WS_Usuario\Actividades_Usuario.wsdl" />
+    <Content Include="Connected Services\WS_Usuario\WebApplication4.WS_Usuario.FinalizarViajeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WS_Usuario\WebApplication4.WS_Usuario.HelloWorldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WS_Usuario\WebApplication4.WS_Usuario.logInResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WS_Usuario\WebApplication4.WS_Usuario.PedirViajeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WS_Usuario\WebApplication4.WS_Usuario.RegistrarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -117,7 +173,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\WS_Pilotos\" />
+    <WCFMetadataStorage Include="Connected Services\WS_Piloto\" />
+    <WCFMetadataStorage Include="Connected Services\WS_Rastreo\" />
+    <WCFMetadataStorage Include="Connected Services\WS_Usuario\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
