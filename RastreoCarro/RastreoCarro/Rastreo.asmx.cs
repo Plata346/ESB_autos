@@ -26,6 +26,13 @@ namespace RastreoCarro
             return "Hola a todos";
         }
 
+        /// <summary>
+        /// Consulta la informacion del viaje por el usuario.
+        /// SOlicita parametros como ID Nombre.
+        /// </summary>
+        /// <returns>
+        /// String (separado por '-')
+        /// </returns>
         [WebMethod]
         public String RastrearViajeUsuario(int idUsuario)
         {
@@ -87,6 +94,13 @@ namespace RastreoCarro
             }
         }
 
+        /// <summary>
+        /// Consulta la informacion del viaje por el piloto.
+        /// SOlicita parametros como ID Nombre.
+        /// </summary>
+        /// <returns>
+        /// String (separado por '-')
+        /// </returns>
         [WebMethod]
         public String RastrearViajePiloto(int idPiloto)
         {

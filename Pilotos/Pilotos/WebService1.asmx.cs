@@ -28,6 +28,13 @@ namespace Pilotos
             return "Hola a todos";
         }
 
+        /// <summary>
+        /// Registrar nuevos piloto.
+        /// SOlicita parametros como Nombre, telefono, mara, linea y placa del vehicuo.
+        /// </summary>
+        /// <returns>
+        /// String (separado por '-')
+        /// </returns>
         [WebMethod]
         public String AgregarPiloto(String name, String tel, String marca, String linea, String placa)
         {
@@ -91,6 +98,13 @@ namespace Pilotos
             return ultimoCOdigo;
         }
 
+        /// <summary>
+        /// Finalizar viaje pendiente.
+        /// SOlicita parametro id Piloto
+        /// </summary>
+        /// <returns>
+        /// String (separado por '-')
+        /// </returns>
         [WebMethod]
         public String FinalizarViaje(int idPiloto)
         {

@@ -94,6 +94,13 @@ namespace Usuarios
             return ultimoCOdigo;
         }
 
+        /// <summary>
+        /// ingreso de usuarios.
+        /// SOlicita parametros como usuario, contraseña.
+        /// </summary>
+        /// <returns>
+        /// String (separado por '-')
+        /// </returns>
         [WebMethod]
         public String logIn(String user, String clave)
         {
@@ -128,6 +135,13 @@ namespace Usuarios
             }
         }
 
+        /// <summary>
+        /// solicitur de viaje nuevo.
+        /// SOlicita parametro id Usuario, Origne y disteno.
+        /// </summary>
+        /// <returns>
+        /// String (separado por '-')
+        /// </returns>
         [WebMethod]
         public String PedirViaje(int idUsuario, String Origen, String Destino)
         {
@@ -255,6 +269,14 @@ namespace Usuarios
             return ultimoCOdigo;
         }
 
+
+        /// <summary>
+        /// Finalizar viaje pendiente.
+        /// SOlicita parametro id Usuario
+        /// </summary>
+        /// <returns>
+        /// String (separado por '-')
+        /// </returns>
         [WebMethod]
         public String FinalizarViaje(int idUsuario)
         {
