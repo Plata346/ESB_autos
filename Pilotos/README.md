@@ -35,8 +35,8 @@ WSUPilotos->>ESB: Respuesta
 
 ```
 
-! [Logo de GitHub] (/ UML.jpg)
-Formato:! [Alt Texto] (url)
+![Logo de GitHub] (UML.jpg)
+
 
 ## Formato Respuesta
 
