@@ -22,8 +22,6 @@ La información de cada uno de los viajes se encuentra registrada en una **base 
 
 ## Diagrama UML 
 
-! [Logo de GitHub] (UML.jpg)
-
 A continuación se representa la solicitud de una petición proveniente del Orquestador (insertar piloto) y como el Micro Servicio de Pilotos se encarga de procesarla. 
 
 ```mermaid
@@ -36,6 +34,8 @@ E.F.->> WSUPilotos: Hecho!
 WSUPilotos->>ESB: Respuesta
 
 ```
+
+![UML](UML.jpg)
 
 ## Formato Respuesta
 
