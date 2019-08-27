@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process
+    name="orquestador"
+    targetNamespace="http://enterprise.netbeans.org/bpel/Orquestador/orquestador"
+    xmlns:tns="http://enterprise.netbeans.org/bpel/Orquestador/orquestador"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
+    xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
+    xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://tempuri.org/">
+    <import namespace="http://j2ee.netbeans.org/wsdl/Orquestador/src/pilotoWSDL" location="pilotoWSDL.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/WebService1.asmxWrapper" location="WebService1.asmxWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://tempuri.org/" location="https://localhost:44387/WebService1.asmx?WSDL" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <partnerLinks>
+        <partnerLink name="WS_pilotos" xmlns:tns="http://enterprise.netbeans.org/bpel/WebService1.asmxWrapper" partnerLinkType="tns:WebService1SoapLinkType" partnerRole="WebService1SoapRole"/>
+        <partnerLink name="PartnerLink1" xmlns:tns="http://j2ee.netbeans.org/wsdl/Orquestador/src/pilotoWSDL" partnerLinkType="tns:pilotoWSDL" myRole="pilotoWSDLPortTypeRole"/>
+    </partnerLinks>
+    <variables>
+        <variable name="PilotoWSDLOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/Orquestador/src/pilotoWSDL" messageType="tns:pilotoWSDLOperationResponse"/>
+        <variable name="AgregarPilotoOut" xmlns:tns="http://tempuri.org/" messageType="tns:AgregarPilotoSoapOut"/>
+        <variable name="AgregarPilotoIn" xmlns:tns="http://tempuri.org/" messageType="tns:AgregarPilotoSoapIn"/>
+        <variable name="PilotoWSDLOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/Orquestador/src/pilotoWSDL" messageType="tns:pilotoWSDLOperationRequest"/>
+    </variables>
+    <sequence>
+        <receive name="Receive1" createInstance="yes" partnerLink="PartnerLink1" operation="pilotoWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/Orquestador/src/pilotoWSDL" portType="tns:pilotoWSDLPortType" variable="PilotoWSDLOperationIn"/>
+        <assign name="Assign1">
+            <copy>
+                <from variable="PilotoWSDLOperationIn" part="nombre"/>
+                <to>$AgregarPilotoIn.parameters/ns0:name</to>
+            </copy>
+            <copy>
+                <from variable="PilotoWSDLOperationIn" part="telefono"/>
+                <to>$AgregarPilotoIn.parameters/ns0:tel</to>
+            </copy>
+            <copy>
+                <from variable="PilotoWSDLOperationIn" part="marca"/>
+                <to>$AgregarPilotoIn.parameters/ns0:marca</to>
+            </copy>
+            <copy>
+                <from variable="PilotoWSDLOperationIn" part="linea"/>
+                <to>$AgregarPilotoIn.parameters/ns0:linea</to>
+            </copy>
+            <copy>
+                <from variable="PilotoWSDLOperationIn" part="placa"/>
+                <to>$AgregarPilotoIn.parameters/ns0:placa</to>
+            </copy>
+        </assign>
+        <invoke name="Invoke1" partnerLink="WS_pilotos" operation="AgregarPiloto" xmlns:tns="http://tempuri.org/" portType="tns:WebService1Soap" inputVariable="AgregarPilotoIn" outputVariable="AgregarPilotoOut"/>
+        <assign name="Assign2">
+            <copy>
+                <from>$AgregarPilotoOut.parameters/ns0:AgregarPilotoResult</from>
+                <to variable="PilotoWSDLOperationOut" part="Respuesta"/>
+            </copy>
+        </assign>
+        <reply name="Reply1" partnerLink="PartnerLink1" operation="pilotoWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/Orquestador/src/pilotoWSDL" portType="tns:pilotoWSDLPortType" variable="PilotoWSDLOperationOut"/>
+    </sequence>
+</process>

@@ -1,0 +1,12 @@
+<soapenv:Envelope xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:orq="OrquestadorCA">
+  <soapenv:Body>
+    <orq:pilotoWSDLOperation>
+      <nombre>alan</nombre>
+      <telefono>4455</telefono>
+      <marca>hondiux</marca>
+      <linea>civicux</linea>
+      <placa>123ggg</placa>
+      <idUSR>1</idUSR>
+    </orq:pilotoWSDLOperation>
+  </soapenv:Body>
+</soapenv:Envelope>

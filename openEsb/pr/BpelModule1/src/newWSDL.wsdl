@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="newWSDL" targetNamespace="http://j2ee.netbeans.org/wsdl/BpelModule1/src/newWSDL"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/BpelModule1/src/newWSDL" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+    <types/>
+    <message name="newWSDLOperationRequest">
+        <part name="usuario" type="xsd:string"/>
+        <part name="telefono" type="xsd:string"/>
+        <part name="unique" type="xsd:string"/>
+        <part name="pass" type="xsd:string"/>
+    </message>
+    <message name="newWSDLOperationResponse">
+        <part name="respuesta" type="xsd:string"/>
+    </message>
+    <portType name="newWSDLPortType">
+        <operation name="newWSDLOperation">
+            <input name="input1" message="tns:newWSDLOperationRequest"/>
+            <output name="output1" message="tns:newWSDLOperationResponse"/>
+        </operation>
+    </portType>
+    <plnk:partnerLinkType name="newWSDL">
+        <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes. 
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+        <plnk:role name="newWSDLPortTypeRole" portType="tns:newWSDLPortType"/>
+    </plnk:partnerLinkType>
+</definitions>

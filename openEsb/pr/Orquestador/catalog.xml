@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <nextCatalog catalog="nbproject/private/retriever/catalog.xml"/>
-    <system systemId="https://localhost:44388/Actividades_Usuario.asmx?WSDL" uri="src/localhost_44388/Actividades_Usuario.asmx.wsdl"/>
     <system systemId="https://localhost:44387/WebService1.asmx?WSDL" uri="src/localhost_44387/WebService1.asmx.wsdl"/>
 </catalog>

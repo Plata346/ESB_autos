@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://enterprise.netbeans.org/bpel/BpelModule1/bpelModule1" xmlns:ns2="http://j2ee.netbeans.org/wsdl/BpelModule1/src/newWSDL" xmlns:ns3="http://enterprise.netbeans.org/bpel/BpelModule1/pilotos" xmlns:ns4="http://j2ee.netbeans.org/wsdl/BpelModule1/src/pilotosWSDL" xmlns:ns5="http://tempuri.org/" xmlns:xlink="http://www.w3.org/2000/xlink" xmlns:ns="PruebaCA">
+    <endpoints>
+        <endpoint display-name="PartnerLink1" endpoint-name="newWSDLPortTypeRole_myRole" file-path="bpelModule1.bpel" interface-name="ns2:newWSDLPortType" name="endpoint1" process-name="bpelModule1" service-name="ns1:PartnerLink1"/>
+        <endpoint display-name="PartnerLink1" endpoint-name="pilotosWSDLPortTypeRole_myRole" file-path="pilotos.bpel" interface-name="ns4:pilotosWSDLPortType" name="endpoint2" process-name="pilotos" service-name="ns3:PartnerLink1"/>
+        <endpoint display-name="WSUsuarios" endpoint-name="Actividades_UsuarioSoapRole_partnerRole" file-path="bpelModule1.bpel" interface-name="ns5:Actividades_UsuarioSoap" name="endpoint3" process-name="bpelModule1" service-name="ns1:WSUsuarios"/>
+        <endpoint display-name="WSpilotos" endpoint-name="WebService1SoapRole_partnerRole" file-path="pilotos.bpel" interface-name="ns5:WebService1Soap" name="endpoint4" process-name="pilotos" service-name="ns3:WSpilotos"/>
+        <endpoint name="endpoint5" endpoint-name="regPiloto" interface-name="ns4:pilotosWSDLPortType" service-name="ns:PruebaCAService1"/>
+        <endpoint name="endpoint6" endpoint-name="regPiloto_RESULT" interface-name="ns5:WebService1Soap" service-name="ns:PruebaCAService2"/>
+        <endpoint name="endpoint7" endpoint-name="regUsuario" interface-name="ns2:newWSDLPortType" service-name="ns:PruebaCAService3"/>
+        <endpoint name="endpoint8" endpoint-name="regUsuario_RESULT" interface-name="ns5:Actividades_UsuarioSoap" service-name="ns:PruebaCAService4"/>
+    </endpoints>
+    <service-units>
+        <binding-component-service-unit unit-name="sun-http-binding" component-name="sun-http-binding" name="sun-http-binding" description="Represents this Service Unit" artifacts-zip="sun-http-binding.jar">
+            <ports>
+                <port x="67" y="288" bindingType="soap">
+                    <link xlink:href="../jbiasa/PruebaCA.wsdl#xpointer(/definitions/service[@name=&apos;PruebaCAService1&apos;]/port[@name=&apos;regPiloto&apos;])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint5"/>
+                    <provides endpoint="endpoint5"/>
+                </port>
+                <port x="67" y="393" bindingType="soap">
+                    <link xlink:href="../jbiasa/PruebaCA.wsdl#xpointer(/definitions/service[@name=&apos;PruebaCAService2&apos;]/port[@name=&apos;regPiloto_RESULT&apos;])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint6"/>
+                    <provides endpoint="endpoint6"/>
+                </port>
+                <port x="67" y="129" bindingType="soap">
+                    <link xlink:href="../jbiasa/PruebaCA.wsdl#xpointer(/definitions/service[@name=&apos;PruebaCAService3&apos;]/port[@name=&apos;regUsuario&apos;])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint7"/>
+                    <provides endpoint="endpoint7"/>
+                </port>
+                <port x="67" y="39" bindingType="soap">
+                    <link xlink:href="../jbiasa/PruebaCA.wsdl#xpointer(/definitions/service[@name=&apos;PruebaCAService4&apos;]/port[@name=&apos;regUsuario_RESULT&apos;])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint8"/>
+                    <provides endpoint="endpoint8"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+        <service-engine-service-unit artifacts-zip="BpelModule1.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="PruebaCA-BpelModule1" unit-name="BpelModule1" unknown="false" x="180" y="161">
+            <provides endpoint="endpoint1"/>
+            <provides endpoint="endpoint2"/>
+            <consumes endpoint="endpoint3"/>
+            <consumes endpoint="endpoint4"/>
+        </service-engine-service-unit>
+    </service-units>
+    <connections>
+        <connection state="new" consumer="endpoint5" provider="endpoint2" route-type="direct"/>
+        <connection state="new" consumer="endpoint4" provider="endpoint6" route-type="direct"/>
+        <connection state="new" consumer="endpoint7" provider="endpoint1" route-type="direct"/>
+        <connection state="new" consumer="endpoint3" provider="endpoint8" route-type="direct"/>
+    </connections>
+    <porttypes>
+        <link xlink:href="../jbiasa/PruebaCA.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BpelModule1/localhost_44387/WebService1.asmx.wsdl#xpointer(/definitions/portType[@name='WebService1Soap'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BpelModule1/localhost_44388/Actividades_Usuario.asmx.wsdl#xpointer(/definitions/portType[@name='Actividades_UsuarioSoap'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BpelModule1/newWSDL.wsdl#xpointer(/definitions/portType[@name='newWSDLPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BpelModule1/pilotosWSDL.wsdl#xpointer(/definitions/portType[@name='pilotosWSDLPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/PruebaCA.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+    </porttypes>
+    <bindings>
+        <link xlink:href="../jbiServiceUnits/BpelModule1/localhost_44387/WebService1.asmx.wsdl#xpointer(/definitions/binding[@name='WebService1Soap'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BpelModule1/localhost_44387/WebService1.asmx.wsdl#xpointer(/definitions/binding[@name='WebService1Soap12'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BpelModule1/localhost_44388/Actividades_Usuario.asmx.wsdl#xpointer(/definitions/binding[@name='Actividades_UsuarioSoap'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BpelModule1/localhost_44388/Actividades_Usuario.asmx.wsdl#xpointer(/definitions/binding[@name='Actividades_UsuarioSoap12'])" xlink:type="simple"/>
+    </bindings>
+    <services>
+        <link xlink:href="../jbiServiceUnits/BpelModule1/localhost_44387/WebService1.asmx.wsdl#xpointer(/definitions/service[@name='WebService1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BpelModule1/localhost_44388/Actividades_Usuario.asmx.wsdl#xpointer(/definitions/service[@name='Actividades_Usuario'])" xlink:type="simple"/>
+    </services>
+    <regions>
+        <region name="WSDL Endpoints" width="150"/>
+        <region name="JBI Modules" width="500"/>
+        <region name="External Modules" width="200"/>
+    </regions>
+</casa>

@@ -9,8 +9,47 @@
     xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
     xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
     xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
-    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling">
-
-   <sequence>
-   </sequence>
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://tempuri.org/">
+    <import namespace="http://j2ee.netbeans.org/wsdl/BpelModule1/src/newWSDL" location="newWSDL.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/Actividades_Usuario.asmxWrapper" location="Actividades_Usuario.asmxWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://tempuri.org/" location="https://localhost:44388/Actividades_Usuario.asmx?WSDL" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <partnerLinks>
+        <partnerLink name="WSUsuarios" xmlns:tns="http://enterprise.netbeans.org/bpel/Actividades_Usuario.asmxWrapper" partnerLinkType="tns:Actividades_UsuarioSoapLinkType" partnerRole="Actividades_UsuarioSoapRole"/>
+        <partnerLink name="PartnerLink1" xmlns:tns="http://j2ee.netbeans.org/wsdl/BpelModule1/src/newWSDL" partnerLinkType="tns:newWSDL" myRole="newWSDLPortTypeRole"/>
+    </partnerLinks>
+    <variables>
+        <variable name="RegistrarUsuarioOut" xmlns:tns="http://tempuri.org/" messageType="tns:RegistrarUsuarioSoapOut"/>
+        <variable name="RegistrarUsuarioIn" xmlns:tns="http://tempuri.org/" messageType="tns:RegistrarUsuarioSoapIn"/>
+        <variable name="NewWSDLOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/BpelModule1/src/newWSDL" messageType="tns:newWSDLOperationResponse"/>
+        <variable name="NewWSDLOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/BpelModule1/src/newWSDL" messageType="tns:newWSDLOperationRequest"/>
+    </variables>
+    <sequence>
+        <receive name="Receive1" createInstance="yes" partnerLink="PartnerLink1" operation="newWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/BpelModule1/src/newWSDL" portType="tns:newWSDLPortType" variable="NewWSDLOperationIn"/>
+        <assign name="Assign1">
+            <copy>
+                <from variable="NewWSDLOperationIn" part="usuario"/>
+                <to>$RegistrarUsuarioIn.parameters/ns0:user</to>
+            </copy>
+            <copy>
+                <from variable="NewWSDLOperationIn" part="telefono"/>
+                <to>$RegistrarUsuarioIn.parameters/ns0:tel</to>
+            </copy>
+            <copy>
+                <from variable="NewWSDLOperationIn" part="unique"/>
+                <to>$RegistrarUsuarioIn.parameters/ns0:unique</to>
+            </copy>
+            <copy>
+                <from variable="NewWSDLOperationIn" part="pass"/>
+                <to>$RegistrarUsuarioIn.parameters/ns0:clave</to>
+            </copy>
+        </assign>
+        <invoke name="Registrar" partnerLink="WSUsuarios" operation="RegistrarUsuario" xmlns:tns="http://tempuri.org/" portType="tns:Actividades_UsuarioSoap" inputVariable="RegistrarUsuarioIn" outputVariable="RegistrarUsuarioOut"/>
+        <assign name="Assign2">
+            <copy>
+                <from>$RegistrarUsuarioOut.parameters/ns0:RegistrarUsuarioResult</from>
+                <to variable="NewWSDLOperationOut" part="respuesta"/>
+            </copy>
+        </assign>
+        <reply name="Reply1" partnerLink="PartnerLink1" operation="newWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/BpelModule1/src/newWSDL" portType="tns:newWSDLPortType" variable="NewWSDLOperationOut"/>
+    </sequence>
 </process>
